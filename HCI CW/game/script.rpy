@@ -1,33 +1,31 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Eileen")
+﻿image market = "market.jpg"
+image stalls = "stalls.jfif"
+image stalls2 = "stalls2.jpg"
+image market_4 = "market4.jpg"
 
 
-# The game starts here.
+
+
+
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    
 
-    scene bg room
+    scene market
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    "Welcome to the night market!"
 
-    show eileen happy
+    show screen gotoStalls
 
-    # These display lines of dialogue.
+    $ renpy.pause(hard=True)
 
-    e "You've created a new Ren'Py game."
+        
+label nextMarket:
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    scene stalls
 
-    # This ends the game.
+    hide screen gotoStalls
 
-    return
+    show screen gotoMarket
+    $ renpy.pause(hard=True)
