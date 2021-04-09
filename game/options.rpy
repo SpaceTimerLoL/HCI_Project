@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("HCI Pitch")
+define config.name = _("Praya Lane")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "HCIPitch"
+define build.name = "PrayaLane"
 
 
 ## Sounds and music ############################################################
@@ -142,7 +142,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "HCIPitch-1617210484"
+define config.save_directory = "PrayaLane-1615906206"
 
 
 ## Icon ########################################################################

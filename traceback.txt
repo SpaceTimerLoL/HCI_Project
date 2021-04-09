@@ -1,0 +1,76 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 25, in script call
+    call livingroom
+  File "game/game_events.rpy", line 31, in script call
+    $ renpy.pause(hard=True)
+  File "game/icons.rpy", line 23, in script
+    $ renpy.pause(hard=True)
+  File "game/icons.rpy", line 23, in <module>
+    $ renpy.pause(hard=True)
+  File "game/icons.rpy", line 25, in execute
+    screen gotoHome():
+  File "game/icons.rpy", line 25, in execute
+    screen gotoHome():
+  File "game/icons.rpy", line 26, in execute
+    imagebutton:
+  File "game/icons.rpy", line 26, in keywords
+    imagebutton:
+  File "game/icons.rpy", line 29, in <module>
+    idle home
+NameError: name 'home' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 25, in script call
+    call livingroom
+  File "game/game_events.rpy", line 31, in script call
+    $ renpy.pause(hard=True)
+  File "game/icons.rpy", line 23, in script
+    $ renpy.pause(hard=True)
+  File "renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/icons.rpy", line 23, in <module>
+    $ renpy.pause(hard=True)
+  File "renpy/exports.py", line 1525, in pause
+    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay)
+  File "renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "renpy/display/core.py", line 3101, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3512, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/screen.py", line 432, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3512, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/screen.py", line 443, in per_interact
+    self.update()
+  File "renpy/display/screen.py", line 631, in update
+    self.screen.function(**self.scope)
+  File "game/icons.rpy", line 25, in execute
+    screen gotoHome():
+  File "game/icons.rpy", line 25, in execute
+    screen gotoHome():
+  File "game/icons.rpy", line 26, in execute
+    imagebutton:
+  File "game/icons.rpy", line 26, in keywords
+    imagebutton:
+  File "game/icons.rpy", line 29, in <module>
+    idle home
+NameError: name 'home' is not defined
+
+Windows-10-10.0.19041
+Ren'Py 7.4.3.1414
+Praya Lane 1.0
+Fri Apr  9 18:05:26 2021
