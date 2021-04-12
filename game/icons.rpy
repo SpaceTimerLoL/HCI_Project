@@ -1,12 +1,23 @@
 init:
     transform iconSize:
-        zoom 0.3
-    transform homeSize:
-        zoom 1.2
-    transform jonkerSize:
         zoom 0.1
-    transform prayaSize:
+    transform taskiconSize:
+        zoom 0.8
+    transform homeSize:
+        zoom 1.5
+    transform jonkerSize:
         zoom 0.15
+    transform prayaSize:
+        zoom 0.25
+
+screen gotoTask():
+    imagebutton:
+        xalign 0.015
+        yalign 0.015
+        idle "task_icon.png"
+        action Show("tasklist")
+        at taskiconSize
+
 
 screen map_icon():
     imagebutton:
@@ -17,6 +28,8 @@ screen map_icon():
         action Call("world_map")
 
 label world_map:
+    show screen gotoTask
+    show screen map_icon
     hide screen gorightChapel
     hide screen goleftHouse2
     hide screen livingdoor
@@ -51,7 +64,7 @@ label world_map:
 screen gotoHome():
     imagebutton:
         xalign 0.88
-        yalign 0.055
+        yalign 0.045
         idle "home_icon.png"
         hover "home_icon_hover.png"
         action Jump("livingroom")
@@ -89,4 +102,3 @@ screen gotoPortugueseSettlement():
         idle "town_icon.png"
         action Jump("towns")
         at iconSize
-

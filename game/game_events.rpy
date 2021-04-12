@@ -33,17 +33,21 @@ label livingroom:
     scene livingroom
     show screen map_icon
     "Living Room"
+    if finished_cooking:
+        jump livingroom2
     if encounter == 0:
         call item_request
     if encounter == 1:
         jump cook
-    show screen livingdoor
     $ renpy.pause(hard=True)
 
+label livingroom2:
+    show screen livingdoor
+    $ renpy.pause(hard=True)
 ##--Player click the door at living room--##
 label clickedLivingDoor:
     "You have just opened the door."
-    jump PrayaLaneChapel
+    jump world_map
     $ renpy.pause(hard=True)
 
 ##--Highlights door when hovered--##
@@ -335,5 +339,3 @@ screen gotoJonkerWalkTempleArrow1():
         hover "arrowleft_hover.png"
         action Jump("JonkerWalkTemple")
         at arrowsize
-
-

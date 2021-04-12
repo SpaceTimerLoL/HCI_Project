@@ -54,19 +54,18 @@ default saute_finished = False
 default combine_finished = False
 default cook_finished = False
 default fry_finished = False
-default progress = 0
 default order = 0
 
 label start:
     scene room
+    $ renpy.music.set_volume(0.1,0,channel="music")
+    play music "audio/wanderlust.ogg"
+    default progress = 0
     with fade
     $pass_time(60)
     show martin_introduction
     $mainname = renpy.input("My friend, what's your name?", "Tony")
     $mainname = mainname.strip()
+    $ finished_cooking = False
     call livingroom
 return
-
-
-
-

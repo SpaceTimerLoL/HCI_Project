@@ -196,7 +196,7 @@ label more1:
                 "That's a good choice."
                 $ inventory.append("Shallots")
                 jump more1
-        "Gallanga | RM3":
+        "Galangal | RM3":
             if Gallanga_Price > money:
                 "Sorry, you don't have enough money."
                 jump more1
@@ -330,6 +330,8 @@ label cook:
 
 label cooking_game:
     scene cooking_bg
+    show screen gotoTask
+    hide screen map_icon
     show screen heat_oil
     show screen saute
     show screen fry
@@ -498,10 +500,12 @@ screen progress_bar():
 label cooked_dish:
     if progress == 100:
         hide screen restart
+        hide screen gotoTask
         scene kari_debal
         martin "Well done."
+        $ finished_cooking = True
         "Demo ends here. Stay tuned for future updates."
-        jump start
+        jump livingroom
     else:
         jump retry
 
