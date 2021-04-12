@@ -1,8 +1,12 @@
 init:
     transform iconSize:
         zoom 0.3
+    transform homeSize:
+        zoom 1.2
     transform jonkerSize:
         zoom 0.1
+    transform prayaSize:
+        zoom 0.15
 
 screen map_icon():
     imagebutton:
@@ -13,6 +17,28 @@ screen map_icon():
         action Call("world_map")
 
 label world_map:
+    hide screen gorightChapel
+    hide screen goleftHouse2
+    hide screen livingdoor
+    hide screen goleftHouse1
+    hide screen gotoJonker88CendolArrow
+    hide screen gotoJonkerWalk1Arrow
+    hide screen gotoJonkerWalk1Arrow1
+    hide screen gotoJonkerWalk2Arrow
+    hide screen gotoJonkerWalk2Arrow1
+    hide screen gotoJonkerWalk3Arrow
+    hide screen gotoJonkerWalk3Arrow1
+    hide screen gotoJonkerWalkTempleArrow
+    hide screen gotoJonkerWalkTempleArrow1
+    hide screen gotoInsideTheTempleArrow
+    hide screen gotoTown
+    hide screen gotoStreet
+    hide screen heat_oil
+    hide screen saute
+    hide screen fry
+    hide screen combine
+    hide screen cook
+    hide screen progress_bar
     scene melaka_map
     show screen gotoJonkerStreet
     show screen gotoPrayaLane
@@ -24,27 +50,29 @@ label world_map:
 
 screen gotoHome():
     imagebutton:
-        xalign 0.5
-        yalign 0.6
+        xalign 0.88
+        yalign 0.055
         idle "home_icon.png"
+        hover "home_icon_hover.png"
         action Jump("livingroom")
-        at iconSize
+        at homeSize
 
 screen gotoJonkerStreet():
     imagebutton:
-        xalign 0.1
-        yalign 0.2
+        xalign 0.27
+        yalign 0.05
         idle "jonker_icon.jpg"
-        action Jump("jonker")
+        action Jump("JonkerWalk1")
         at jonkerSize
+
 
 screen gotoPrayaLane():
     imagebutton:
-        xalign 0.2
-        yalign 0.3
+        xalign 0.67
+        yalign 0.57
         idle "praya_icon.png"
         action Jump("PrayaLaneChapel")
-        at iconSize
+        at prayaSize
 
 screen gotoNightMarket():
     imagebutton:
@@ -56,8 +84,9 @@ screen gotoNightMarket():
 
 screen gotoPortugueseSettlement():
     imagebutton:
-        xalign 0.4
-        yalign 0.5
+        xalign 0.93
+        yalign 0.82
         idle "town_icon.png"
         action Jump("towns")
         at iconSize
+
